@@ -1,10 +1,10 @@
 # [unrated] 문자열의 앞의 n글자 - 181907 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181907) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181907?language=cpp) 
 
 ### 성능 요약
 
-메모리: 30.8 MB, 시간: 0.27 ms
+메모리: 4.18 MB, 시간: 0.01 ms
 
 ### 구분
 
