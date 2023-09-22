@@ -1,10 +1,10 @@
 # [unrated] 소문자로 바꾸기 - 181876 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181876) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181876?language=csharp) 
 
 ### 성능 요약
 
-메모리: 4.26 MB, 시간: 0.01 ms
+메모리: 31.1 MB, 시간: 0.50 ms
 
 ### 구분
 
