@@ -1,10 +1,10 @@
 # [unrated] 조건 문자열 - 181934 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181934?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181934?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31.4 MB, 시간: 0.22 ms
+메모리: 4.14 MB, 시간: 0.01 ms
 
 ### 구분
 
