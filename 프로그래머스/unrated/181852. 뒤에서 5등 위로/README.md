@@ -1,10 +1,10 @@
 # [unrated] 뒤에서 5등 위로 - 181852 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181852?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181852?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31.4 MB, 시간: 3.28 ms
+메모리: 4.21 MB, 시간: 0.02 ms
 
 ### 구분
 
