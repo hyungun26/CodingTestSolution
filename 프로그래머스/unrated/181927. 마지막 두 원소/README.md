@@ -1,10 +1,10 @@
 # [unrated] 마지막 두 원소 - 181927 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181927?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181927?language=cpp) 
 
 ### 성능 요약
 
-메모리: 31.2 MB, 시간: 0.21 ms
+메모리: 3.63 MB, 시간: 0.03 ms
 
 ### 구분
 
