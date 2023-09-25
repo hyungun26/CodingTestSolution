@@ -1,13 +1,10 @@
 using System;
+using System.Linq;
 
 public class Solution {
     public int solution(int[] num_list, int n) {
         int answer = 0;
-        for(int i = 0; i < num_list.Length; i++)
-        {
-            if(num_list[i] == n)
-                return 1;
-        }
+        answer = num_list.Contains(n) ? 1 : 0;
         return answer;
     }
 }
