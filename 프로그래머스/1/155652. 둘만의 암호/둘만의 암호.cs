@@ -1,35 +1,25 @@
 using System;
+using System.Linq;
 
 public class Solution {
     public string solution(string s, string skip, int index) {
         string answer = "";
         char[] cArr = s.ToCharArray();
-        char[] skipCArr = skip.ToCharArray();
-        Array.Sort(skipCArr);
-        int num = index;
-        
+        string a = new string("abcdefghijklmnopqrstuvwxyz".Where(x => !skip.Contains(x)).ToArray());
+        char[] aArr = a.ToCharArray();
+        Array.Sort(aArr);
+
         for(int i = 0; i < cArr.Length; i++)
         {
-            int count = 0;
-            for(int j = 0; j < skipCArr.Length; j++)
+            int num = Array.IndexOf(aArr, cArr[i]);
+            int sum = num+index;
+            if(sum >= aArr.Length)
             {
-                if(cArr[i] <= skipCArr[j] && cArr[i]+num >= skipCArr[j])
-                {
-                    cArr[i] = (char)((int)cArr[i]+1);
-                    count++;
-                }   
-            }
-            
-            if(cArr[i]+num > 122)
-            {
-                num = cArr[i]+num - (int)'{';
-                cArr[i] = 'a';
-                i--;
-                continue;
-            }
-            answer += (char)((int)cArr[i]+num);
-            num = index;
+                sum = sum % aArr.Length;
+            }    
+            answer += aArr[sum];
         }
+        
         return answer;
     }
 }
