@@ -1,21 +1,14 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
+
 public class Solution {
     public int[] solution(int[] arr) {
-        Queue<int> q = new Queue<int>();
-        for(int i = 0; i < arr.Length; i++)
+        List<int> list = new List<int>();
+        foreach(var i in arr)
         {
-            for(int j = 0; j < arr[i]; j++)
-            {
-                q.Enqueue(arr[i]);
-            }
+            list.AddRange(Enumerable.Repeat(i, i));
         }
-        int[] answer = new int[q.Count];
-        for(int i = 0; i < answer.Length; i++)
-        {
-            answer[i] = q.Dequeue();
-        }
-
-        return answer;
+        return list.ToArray();
     }
 }
