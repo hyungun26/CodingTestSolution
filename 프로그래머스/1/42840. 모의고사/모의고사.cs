@@ -1,87 +1,63 @@
 using System;
-using System.Linq;
+using System.Collections.Generic;
 
 public class Solution {
     public int[] solution(int[] answers) {
-        int[] su1 = {1, 2, 3, 4, 5};
-        int su1C = 0;
-        int[] su2 = {2, 1, 2, 3, 2, 4, 2, 5};
-        int su2C = 0;
-        int[] su3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
-        int su3C = 0;
+        List<int> answer = new List<int>();
+        int[] a1 = {1,2,3,4,5};
+        int[] a2 = {2,1,2,3,2,4,2,5};
+        int[] a3 = {3,3,1,1,2,2,4,4,5,5};
+        int a1Num = 0;
+        int a1A = 0;
         
-        int count = 1;
-        int size = su1.Length;
+        int a2Num = 0;
+        int a2A = 0;
         
-        while(size < answers.Length)
-        {
-            count++;
-            size += su1.Length;
-        }
-        
-        Array.Resize(ref su1, su1.Length * count);
-        Array.Resize(ref su2, su2.Length * count);
-        Array.Resize(ref su3, su3.Length * count);
-        
+        int a3Num = 0;
+        int a3A = 0;
+        //여기서 문제 찍는 배열이 answer배열 길이보다 길어야함
         for(int i = 0; i < answers.Length; i++)
         {
-            su1[i] = su1[i % (su1.Length / count)];
-        }
-        for(int i = 0; i < answers.Length; i++)
-        {
-            su2[i] = su2[i % (su2.Length / count)];
-        }
-        for(int i = 0; i < answers.Length; i++)
-        {
-            su3[i] = su3[i % (su3.Length / count)];
-        }
-        
-        for(int i = 0; i < answers.Length; i++)
-        {
-           if(answers[i] == su1[i])
-           {
-                su1C++;
-           }
-            if(answers[i] == su2[i])
-           {
-                su2C++;
-           }
-            if(answers[i] == su3[i])
-           {
-                su3C++;
-           }
-        }
-        
-        int a = 0;
-
-        //최고점수를 구함
-        int[] iArr = new int[3];
-        iArr[0] = su1C;
-        iArr[1] = su2C;
-        iArr[2] = su3C;
-        
-        a = iArr.Max();
-        int c = 0;
-        
-        for(int i = 0; i < iArr.Length; i++)
-        {
-            if(a == iArr[i])
+            if(a1[i-a1Num] == answers[i])
             {
-                c++;
+                a1A++;
+            }
+            if((i+1) % a1.Length == 0)
+            {
+                a1Num += a1.Length;
+            }
+            if(a2[i-a2Num] == answers[i])
+            {
+                a2A++;
+            }
+            if((i+1) % a2.Length == 0)
+            {
+                a2Num += a2.Length;
+            }
+            if(a3[i-a3Num] == answers[i])
+            {
+                a3A++;
+            }
+            if((i+1) % a3.Length == 0)
+            {
+                a3Num += a3.Length;
+            }
+        }     
+        answer.Add(a1A);
+        answer.Add(a2A);
+        answer.Add(a3A);
+        int num = a1A > a2A ? a1A : a2A;
+        num = num > a3A ? num : a3A;
+        
+        List<int> an = new List<int>();
+        for(int i = 0; i < answer.Count; i++)
+        {
+            if(answer[i] == num)
+            {
+                an.Add(i+1);
             }
         }
         
-        int[] answer = new int[c];
-        int cs = 0;
-        for(int i = 0; i < iArr.Length; i++)
-        {
-            if(a == iArr[i])
-            {
-                answer[cs] = i+1;
-                cs++;
-            }
-        }
-        
-        return answer;
+        return an.ToArray();
     }
 }
