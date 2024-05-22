@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 public class Solution {
@@ -18,46 +19,41 @@ public class Solution {
         //여기서 문제 찍는 배열이 answer배열 길이보다 길어야함
         for(int i = 0; i < answers.Length; i++)
         {
-            if(a1[i-a1Num] == answers[i])
-            {
-                a1A++;
-            }
+            a1A = ss(a1, a1Num, a1A, i, answers);
             if((i+1) % a1.Length == 0)
             {
                 a1Num += a1.Length;
             }
-            if(a2[i-a2Num] == answers[i])
-            {
-                a2A++;
-            }
+            a2A = ss(a2, a2Num, a2A, i, answers);
             if((i+1) % a2.Length == 0)
             {
                 a2Num += a2.Length;
             }
-            if(a3[i-a3Num] == answers[i])
-            {
-                a3A++;
-            }
+            a3A = ss(a3, a3Num, a3A, i, answers);
             if((i+1) % a3.Length == 0)
             {
                 a3Num += a3.Length;
             }
         }     
+        
         answer.Add(a1A);
         answer.Add(a2A);
         answer.Add(a3A);
-        int num = a1A > a2A ? a1A : a2A;
-        num = num > a3A ? num : a3A;
         
-        List<int> an = new List<int>();
-        for(int i = 0; i < answer.Count; i++)
+        List<int> lstAnswer = new List<int>();
+        
+        if (answer[0] == answer.Max()) lstAnswer.Add(1);
+        if (answer[1] == answer.Max()) lstAnswer.Add(2);
+        if (answer[2] == answer.Max()) lstAnswer.Add(3);
+        
+        return lstAnswer.ToArray();
+    }
+    public int ss(int[] a, int b, int c,int i, int[] answers)
+    {
+        if(a[i-b] == answers[i])
         {
-            if(answer[i] == num)
-            {
-                an.Add(i+1);
-            }
+            c++;
         }
-        
-        return an.ToArray();
+        return c;
     }
 }
