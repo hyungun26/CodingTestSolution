@@ -17,12 +17,6 @@ public class Solution {
             c[i] = count;
         }
         
-        foreach(var i in c)
-        {
-            Console.Write(i + " ");
-        }
-        Console.WriteLine();
-        
         for(int i = 0; i < c.Length; i++)
         {
             int num = 1;
@@ -41,10 +35,6 @@ public class Solution {
                 }
             }
             list.Add(num);
-        }
-        foreach(var i in list)
-        {
-            Console.Write(i);
         }
         
         return list.ToArray();
