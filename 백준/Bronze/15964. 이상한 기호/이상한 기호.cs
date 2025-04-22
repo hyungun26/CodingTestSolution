@@ -6,7 +6,7 @@ namespace baejoon_15964
     {        
         static void Main()
         {
-            int[] iArr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            long[] iArr = Array.ConvertAll(Console.ReadLine().Split(), long.Parse);
             Console.WriteLine((iArr[0] + iArr[1]) * (iArr[0] - iArr[1]));
         }
     }
